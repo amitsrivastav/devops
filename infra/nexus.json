@@ -1,0 +1,23 @@
+{
+  "id": "/infra/nexus",
+  "mem": 512,
+  "cpus": 1.0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "sonatype/nexus",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8081, "hostPort": 0, "servicePort": 1001, "protocol": "tcp" }
+      ]
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/"
+    }
+  ]
+}
