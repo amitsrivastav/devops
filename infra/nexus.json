@@ -6,18 +6,11 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "sonatype/nexus",
+      "image": "sonatype/nexus3",
       "network": "BRIDGE",
       "portMappings": [
         { "containerPort": 8081, "hostPort": 0, "servicePort": 1001, "protocol": "tcp" }
       ]
     }
-  },
-  "healthChecks": [
-    {
-      "protocol": "HTTP",
-      "portIndex": 0,
-      "path": "/"
-    }
-  ]
+  }
 }
