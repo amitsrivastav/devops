@@ -1,0 +1,42 @@
+{
+  "id": "/mesos-consul",
+  "cmd": null,
+  "cpus": 0.1,
+  "mem": 256,
+  "disk": 0,
+  "instances": 1,
+  "constraints": [
+    [
+      "hostname",
+      "LIKE",
+      "del2vmplovidapp01.*"
+    ]
+  ],
+  "acceptedResourceRoles": [],
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "ciscocloud/mesos-consul",
+      "network": "BRIDGE",
+      "portMappings": [],
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  },
+  "portDefinitions": [
+    {
+      "port": 10000,
+      "protocol": "tcp",
+      "name": "default",
+      "labels": {}
+    }
+  ],
+  "args": [
+    "--zk=zk://10.202.11.22:2181/mesos",
+    "--log-level=debug",
+    "--consul",
+    "--refresh=5s"
+  ]
+}
