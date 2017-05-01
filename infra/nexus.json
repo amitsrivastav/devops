@@ -2,19 +2,25 @@
   "id": "/infra/nexus",
   "mem": 1512,
   "cpus": 1.0,
-  "instances": 2,
+  "instances": 1,
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "sonatype/nexus3",
+      "image": "sonatype/nexus3:latest",
       "network": "BRIDGE",
       "portMappings": [
         { 
             "containerPort": 8081,
-            "hostPort": 8081,
+            "hostPort": 0,
             "servicePort": 8081,
             "protocol": "tcp"
-            }
+            },
+            { 
+              "containerPort": 8123,
+              "hostPort": 0,
+              "servicePort": 8123,
+              "protocol": "tcp"
+              }
       ]
     }
   }
