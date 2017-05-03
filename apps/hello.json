@@ -5,6 +5,13 @@
   "mem": 16,
   "disk": 0,
   "instances": 1,
+  "constraints": [
+    [
+      "hostname",
+      "LIKE",
+      "del2vmplovidapp02.*"
+    ]
+  ],
   "acceptedResourceRoles": [
     "*"
   ],
