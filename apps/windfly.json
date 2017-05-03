@@ -1,10 +1,10 @@
 {
   "id": "/apps/windfly",
   "cmd": "/opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0",
-  "cpus": 0.3,
-  "mem": 256,
+  "cpus": 0.2,
+  "mem": 48,
   "disk": 0,
-  "instances": 0,
+  "instances": 1,
   "acceptedResourceRoles": [
     "*"
   ],
