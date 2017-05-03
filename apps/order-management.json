@@ -1,10 +1,10 @@
 {
   "id": "/apps/oms",
   "cmd": null,
-  "cpus": 1,
-  "mem": 128,
+  "cpus": 0.5,
+  "mem": 1024,
   "disk": 0,
-  "instances": 0,
+  "instances": 1,
   "acceptedResourceRoles": [
     "*"
   ],
