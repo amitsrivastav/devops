@@ -1,25 +1,14 @@
 {
-  "id": "/apps/hello",
+  "id": "/apps/test",
   "cmd": null,
   "cpus": 0.1,
   "mem": 16,
   "disk": 0,
   "instances": 1,
-  "constraints": [
-    [
-      "hostname",
-      "LIKE",
-      "del2vmplovidapp02.*"
-    ]
-  ],
-  "acceptedResourceRoles": [
-    "*"
-  ],
-  "container": {
+    "container": {
     "type": "DOCKER",
-    "volumes": [],
     "docker": {
-      "image": "cjonagam/helloworld",
+      "image": "repo.vcloud.world/test:latest",
       "network": "BRIDGE",
       "portMappings": [
         {
