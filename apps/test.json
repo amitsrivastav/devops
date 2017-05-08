@@ -1,0 +1,51 @@
+{
+  "id": "/apps/test",
+  "cmd": null,
+  "cpus": 0.1,
+  "mem": 16,
+  "disk": 0,
+  "instances": 1,
+    "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "repo.vcloud.world/test:latest",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 0,
+          "servicePort": 18000,
+          "protocol": "tcp",
+          "labels": {}
+        }
+      ],
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  },
+  "env": {
+    "MSG": "chakri"
+  },
+  "healthChecks": [
+    {
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "portIndex": 0,
+      "path": "/",
+      "protocol": "HTTP",
+      "ignoreHttp1xx": false
+    }
+  ],
+  "portDefinitions": [
+    {
+      "port": 18000,
+      "protocol": "tcp",
+      "name": "default",
+      "labels": {}
+    }
+  ]
+}
